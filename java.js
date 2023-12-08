@@ -2,12 +2,28 @@ const container = document.getElementById("container");
 let targetBox = ""
 let targetBoxId = ""
 let targetBoxClass = ""
+let gridSizeButton = document.getElementById("gridSizeButton")
+let gridSizeInput = document.getElementById("gridSizeInput")
+let gridSize = "16"
+
+
 
 function createBoxes() {
-    for (i = 0; i <= 255; i++) {
+
+    if (gridSize > 100) {
+        gridSize = 100
+    }
+
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+    
+
+    for (i = 0; i <= gridSize * gridSize - 1; i++) {
         let box = document.createElement("div");
         box.id = `box` + i;
         box.className = "squaresBlack";
+        box.style.width = (640 / gridSize -2) + "px";
         container.appendChild(box);
     }
 }
@@ -26,6 +42,12 @@ function createBoxes() {
     }
 })
 */
+
+gridSizeButton.addEventListener('click', (event) => {
+    gridSize = gridSizeInput.value;
+    gridSizeInput.textContent = "";
+    createBoxes()
+})
 
 container.addEventListener('mousedown', (event) => {
     hover(event)

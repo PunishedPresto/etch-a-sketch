@@ -2,19 +2,22 @@
     border: 1px solid white;
     color: black;
     background-color: black;
-    height: 38px;
-    width: 38px;
+    
 }
 
 .squaresWhite {
     border: 1px solid white;
     color: white;
     background-color: white;
-    height: 38px;
-    width: 38px;
+    
 }
 
 div div {
+    aspect-ratio: 1/1;
+    height: auto;
+    flex: 1 0 auto;
+    flex-grow: 0;
+
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -24,8 +27,12 @@ div div {
 
 #container {
     display: flex;
-    flex-basis: 1 1 0;
+    align-items: flex-start;
     flex-wrap: wrap;
+    justify-content: space-around;
+    min-width: 0;
+    min-height: 0;
+    
 
     width: 640px;
     height: 640px;
