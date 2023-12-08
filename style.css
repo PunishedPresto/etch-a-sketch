@@ -1,0 +1,32 @@
+.squaresBlack {
+    border: 1px solid white;
+    color: black;
+    background-color: black;
+    height: 38px;
+    width: 38px;
+}
+
+.squaresWhite {
+    border: 1px solid white;
+    color: white;
+    background-color: white;
+    height: 38px;
+    width: 38px;
+}
+
+div div {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#container {
+    display: flex;
+    flex-basis: 1 1 0;
+    flex-wrap: wrap;
+
+    width: 640px;
+    height: 640px;
+}
